@@ -1095,7 +1095,7 @@ public:
   void stealFrom()
   {
     CRSMatrix< T, COL_TYPE, INDEX_TYPE > matrix;
-    matrix.stealFrom( std::move( this->m_sp ) );
+    matrix.template stealFrom< serialPolicy >( std::move( this->m_sp ) );
     COMPARE_TO_REFERENCE( matrix.toSparsityPatternView(), this->m_ref );
 
     EXPECT_EQ( this->m_sp.numRows(), 0 );
