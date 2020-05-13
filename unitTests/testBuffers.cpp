@@ -126,7 +126,7 @@ TYPED_TEST( BufferAPITest, move )
 {
   TypeParam buffer( true );
 
-  buffer.move( chai::CPU, 0, true );
+  buffer.moveNested( chai::CPU, 0, true );
   buffer.move( chai::CPU, true );
 
   bufferManipulation::free( buffer, 0 );
